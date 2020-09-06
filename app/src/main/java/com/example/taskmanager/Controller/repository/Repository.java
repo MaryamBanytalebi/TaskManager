@@ -23,9 +23,7 @@ public class Repository {
             Task task =new Task();
             task.setName(task.getName());
             task.setState(task.getState());
-
         }
-
     }
 
     public List<Task> getTasks() {
