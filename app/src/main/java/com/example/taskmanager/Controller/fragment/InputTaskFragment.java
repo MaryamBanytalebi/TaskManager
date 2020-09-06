@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.taskmanager.Controller.activity.TaskListActivity;
 import com.example.taskmanager.R;
 
 
@@ -55,7 +56,7 @@ public class InputTaskFragment extends Fragment {
         mBtnMake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),TaskListFragment.class);
+                Intent intent = new Intent(getActivity(), TaskListActivity.class);
                 intent.putExtra(EXTRA_NAME,mEdtName.getText().toString());
                 intent.putExtra(EXTRA_COUNT,mEdtCount.getText().toString());
                 startActivityForResult(intent, REQUEST_CODE);

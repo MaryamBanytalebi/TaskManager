@@ -24,10 +24,7 @@
         android:id="@+id/btn_make"
         android:layout_below="@+id/edt_count"
         android:layout_marginTop="80dp"
-        android:text="ساخت"
-        android:textSize="30dp"/>
-
-
-
+        android:text="make"
+        android:textSize="20dp"/>
 
 </RelativeLayout>
