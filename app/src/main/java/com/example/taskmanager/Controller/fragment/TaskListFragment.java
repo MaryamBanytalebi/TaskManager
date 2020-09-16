@@ -1,8 +1,10 @@
 package com.example.taskmanager.Controller.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -73,6 +75,7 @@ public class TaskListFragment extends Fragment {
     private class TaskHolder extends RecyclerView.ViewHolder{
         private TextView mTextViewName;
         private TextView mTextViewState;
+        private Task mTask;
 
         public TaskHolder(@NonNull View itemView) {
             super(itemView);
@@ -109,15 +112,22 @@ public class TaskListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
+            Repository repository = Repository.getInstance();
             Task task = mTasks.get(position);
             holder.mTextViewName.setText(task.getName());
-            holder.mTextViewState.setText(task.getState());
-
+          //  holder.mTextViewState.setText(repository.randomState().toString());
+            holder.mTextViewState.setText(task.getState().toString());
+            for (int i = 0; i < mCountUser; i+=2) {
+                holder.itemView.setBackgroundColor(Color.GRAY);
+            }
+            for (int i = 1; i < mCountUser; i+=2) {
+                holder.itemView.setBackgroundColor(Color.RED);
+            }
         }
 
         @Override
         public int getItemCount() {
-            return mTasks.size();
+            return mCountUser;
         }
     }
 

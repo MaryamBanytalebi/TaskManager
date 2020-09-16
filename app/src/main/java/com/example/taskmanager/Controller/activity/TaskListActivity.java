@@ -19,13 +19,13 @@ public class TaskListActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container1);
 
-        if (fragment == null){
+
             TaskListFragment taskListFragment = new TaskListFragment();
             fragmentManager
                     .beginTransaction()
                     .add(R.id.fragment_container1,taskListFragment)
                     .commit();
-        }
+
     }
 
 

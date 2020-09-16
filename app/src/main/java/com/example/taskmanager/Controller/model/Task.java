@@ -1,24 +1,31 @@
 package com.example.taskmanager.Controller.model;
 
-public class Task {
-    private String mName,mState;
+import com.example.taskmanager.Controller.State;
 
-    public Task() {
+import java.util.Date;
+
+public class Task {
+    private String mName;
+    private State mState;
+
+    public Task(String name, State state) {
+        mName = name;
+        mState = state;
     }
 
     public String getName() {
         return mName;
     }
 
-    public String getState() {
-        return mState;
-    }
-
     public void setName(String name) {
         mName = name;
     }
 
-    public void setState(String state) {
+    public State getState() {
+        return mState;
+    }
+
+    public void setState(State state) {
         mState = state;
     }
 }
